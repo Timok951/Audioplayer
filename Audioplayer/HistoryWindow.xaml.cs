@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MS.WindowsAPICodePack.Internal;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,8 @@ namespace Audioplayer
     /// </summary>
     public partial class HistoryWindow : Window
     {
+        public string Result { get; set; }
+
         public HistoryWindow(List<string> history)
         {
             InitializeComponent();
@@ -27,6 +31,10 @@ namespace Audioplayer
 
         private void History_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            string selectedFilePath = History.SelectedItem as string;
+            Result = selectedFilePath;
+             this.DialogResult = true;  
 
         }
     }

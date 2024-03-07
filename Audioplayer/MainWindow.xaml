@@ -27,8 +27,8 @@
         <Button Content="Forward"  Height="30" Grid.Row="3" Grid.Column="0" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_3"/>
         <Button Content="Repeat"  Grid.Row="1"  Height="30" Width="400" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_4"/>
         <Button Content="Random"  Grid.Row="2" Height="30" Width="400" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Slider Grid.Column="1" Grid.Row="3" Width="395" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <MediaElement x:Name="Media" LoadedBehavior="Manual" HorizontalAlignment="Left" Height="154" Margin="0,72,0,0" Grid.Row="3" VerticalAlignment="Top" Width="396" Grid.Column="0" Grid.RowSpan="3"/>
+        <Slider x:Name="Sound" Grid.Column="1" Grid.Row="3" Width="395" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" ValueChanged="Sound_ValueChanged"/>
+        <MediaElement x:Name="Media" LoadedBehavior="Manual" HorizontalAlignment="Left" Height="154" Margin="0,72,0,0" Grid.Row="3" VerticalAlignment="Top" Width="396" Grid.Column="1" Grid.RowSpan="3" MediaOpened="Media_MediaOpened"/>
         <ListView x:Name="Listview" Grid.Column="1" Grid.Row="3" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="2,72,-2,0" Grid.RowSpan="3" >
             <ListView.View>
                 <GridView>
@@ -36,6 +36,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Slider x:Name="Duration" Grid.Row="4" Grid.Column="0" Width="396" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" ValueChanged="Duration_ValueChanged"/>
+        <TextBlock x:Name="Left_time" HorizontalAlignment="Left" Margin="151,0,0,0" Grid.Column="0" Grid.Row="5" TextWrapping="Wrap" Text="Time" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
